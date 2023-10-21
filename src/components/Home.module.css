@@ -1,3 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 *{
-    background-color: aqua;
+    margin: 0px;
+    overflow: hidden;
+}
+.Container{
+    display: flex;
+    flex-direction: row;
+
+}
+.PartOne{
+    display: flex;
+    width: 50vw;
+    height: 100vh;
+    background-color: blue;
+    background-image: url("C:\Users\ACER\Desktop\project 1 cuvette\capstone_project_cuvette1\capstone1\src\images\image 13home_img1.png");
+    background-size: cover;
+    justify-content: center;
+    align-items: end;
+    
+}
+
+.PartOne_Heading{
+    width: 500px;
+    height: 300px;
+    margin-bottom: 75px;
+    letter-spacing: 3px;
+    font-weight: 400;
+    font-size: 30px;
+   
+    color: white;
+    font-family: 'Roboto', sans-serif;;
 }

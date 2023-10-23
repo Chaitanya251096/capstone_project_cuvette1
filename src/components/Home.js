@@ -13,20 +13,21 @@ const [errorText1, setErrorText1] = useState('')
 const [errorText2, setErrorText2] = useState('')
 const [errorText3, setErrorText3] = useState('')
 const [errorText4, setErrorText4] = useState('')
-const [errorText5, setErrorText5] = useState('')
+
 
 const validateForm = () =>{
+
+ 
     let isError = false
     if(nameInput.length <= 0){
         setErrorText('name input required');
         isError = true
-       
     }
     let isError1 = false
     if(userNameInput.length <= 0){
         setErrorText1('username input required');
         isError1 = true
-       
+     
     }
     let isError2 = false
     if(emailInput.length <= 0){
@@ -41,13 +42,12 @@ const validateForm = () =>{
        
     }
     let isError4 = false
-    if(!checkInput.checked){
+    if(!checkInput){
         setErrorText4('please check the check box');
         isError4 = true
        
     }
    
-
 
     return isError;
     return isError1;
@@ -96,17 +96,18 @@ const handleChange4 = (e) =>{
             </div>
         </div>
 
-        <div>
-            <h1>Super app</h1>
+        <div className={Homestyles.PartTwo}>
+           <div><h1>Super app</h1></div> 
             <h3>Create your new account</h3>
             <form onSubmit={(e)=>{
                 e.preventDefault();
                 
                 // form validate
-               if( validateForm()){
+               if(validateForm()){
+                
                 return
                }
-
+               
                 
 
                
@@ -118,7 +119,7 @@ const handleChange4 = (e) =>{
                     username: userNameInput,
                     email: emailInput,
                     mobile: mobileInput,
-                    checkbox: checkInput
+                checkbox: checkInput
                 }
 
                 console.log(obj)
@@ -127,38 +128,38 @@ const handleChange4 = (e) =>{
                 setUserNameInput("")
                 setEmailInput("")
                 setMobileInput("")
-                setCheckInput("")
+                setCheckInput(false)
                 setErrorText("")
                 setErrorText1("")
                 setErrorText2("")
                 setErrorText3("")
                 setErrorText4("")
-                setErrorText5("")
+                
 
 
             }}>
             <section>
-                <input type="text" value={nameInput} onChange={handleChange}/>
+                <input type="text" className={Homestyles.name} placeholder=' Name' value={nameInput} onChange={handleChange}/>
                 <p style={{color: 'red'}}>{errorText}</p>
-                <p style={{color: 'red'}}>{errorText5}</p>
+                
             </section>
             <section>
-                <input type="text" value={userNameInput} onChange={handleChange1} />
+                <input type="text"  className={Homestyles.name} placeholder=' Username' value={userNameInput} onChange={handleChange1} />
                 <p style={{color: 'red'}}>{errorText1}</p>
             </section>
             <section>
-                <input type="email;" value={emailInput} onChange={handleChange2}/>
+                <input type="email"  className={Homestyles.name} placeholder=' Email' value={emailInput} onChange={handleChange2}/>
                 <p style={{color: 'red'}}>{errorText2}</p>
             </section>
             <section>
-                <input type="text" value={mobileInput} onChange={handleChange3}/>
+                <input type="text" className={Homestyles.name} placeholder=' Mobile' value={mobileInput} onChange={handleChange3}/>
                 <p style={{color: 'red'}}>{errorText3}</p>
             </section>
             <section>
 
 
-            <input type="checkbox" value={checkInput} onChange={handleChange4}/>
-            <label htmlFor="">Share my registration data with Superapp</label>
+            <input type="checkbox" value={checkInput} className={Homestyles.checkbox} onChange={handleChange4}/>
+            <label htmlFor="">  Share my registration data with Superapp</label>
             <p style={{color: 'red'}}>{errorText4}</p>
                 
             </section>
@@ -167,11 +168,11 @@ const handleChange4 = (e) =>{
 
             
             </section>
-
+            <div className={Homestyles.termsDiv}>
             <p>By clicking on Sign up. you agree to Superapp <a href="">Terms and Conditions of Use</a></p>
 
             <p>To learn more about how Superapp collects, uses, shares and protects your personal data please head Superapp <a href="">Privacy Policy</a></p>
-          
+            </div>
     
             </form>
 

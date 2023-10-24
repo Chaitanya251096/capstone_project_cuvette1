@@ -17,7 +17,7 @@ const [errorText4, setErrorText4] = useState('')
 
 const validateForm = () =>{
 
- 
+    
     let isError = false
     if(nameInput.length <= 0){
         setErrorText('name input required');

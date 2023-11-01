@@ -3,12 +3,15 @@
 *{
     margin: 0px;
     overflow: hidden;
+    /* background-color: #72DB73; */
 }
 .Container{
     display: flex;
     flex-direction: row;
 
 }
+
+
 .PartOne{
     display: flex;
     width: 50vw;
@@ -29,8 +32,8 @@
     font-weight: 400;
     font-size: 30px;
    
-    color: white;
-    font-family: 'Roboto', sans-serif;;
+    color:white;
+    font-family: 'Roboto', sans-serif;
 }
 
 .PartTwo{
@@ -42,7 +45,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'DM Sans', sans-serif;;
+    font-family: 'DM Sans', sans-serif;
     text-align: center;
 }
 
@@ -55,6 +58,7 @@
 
 .PartTwo h1{
     font-size: 60px;
+    
 }
 .termsDiv{
     width: 450px;
@@ -66,13 +70,17 @@
     
 }
 
+.superApp{
+    color: #72DB73;
+}
+
 a{
     text-decoration: none;
     color: green;
     font-weight:bold;
 }
 
-button{
+.SIGN_UP{
     width: 300px;
     height: 30px;
     margin-bottom: 15px;
@@ -84,14 +92,31 @@ button{
     color :white;
     
 
+
 }
 
 .name{
     background-color:#292929;
-    border: none;
+ border: 0px ;
     width: 300px;
     height: 30px;
     margin-top: 15px;
+    margin-bottom: 15px ;
     font-weight: bold;
+    color: white;
+    
+
+}
+
+.name:hover{
+    /* background-color:#72DB73; */
+    /* border: 5px blue; */
+    border: 1px solid #72DB73;
+    /* width: 300px;
+    height: 30px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: white; */
+    
 
 }

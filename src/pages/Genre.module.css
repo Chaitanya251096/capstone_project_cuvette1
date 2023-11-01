@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&display=swap');
+
+.mainback{
+    width:100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+}
+
+.partOne{
+    width:40vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 60px; */
+    text-align: center;
+}
+
+
+
+
+
+.h1{
+    color: #72DB73;
+    font-size: 100px;
+    font-family: 'Roboto', sans-serif;
+ 
+
+}
+.h2{
+
+    color: white;
+    font-size: 50px;
+    font-family: 'Roboto', sans-serif;;
+    margin-top: 50px;
+    margin-bottom: 50px;
+   
+
+}
+
+.selectedgenres{
+    width: 600px;
+    height: 150px;
+    /* justify-content: space-around; */
+    align-items: start;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    text-align: center;
+}
+
+
+.selectedgenrechip{
+    margin-left: 10px;
+    font-family:'Roboto', sans-serif;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    /* padding-top: 10px; */
+    display: flex;
+    justify-content: space-evenly;
+    /* text-align: center; */
+    width:100px;
+    height:20px;
+    padding: 10px;
+    text-align: center;
+    color :white;
+   
+    background-color:#148A08; 
+    /* margin-left:25px; */
+    border-radius:20px;
+    border:none;
+    
+}
+
+
+
+.chipicon{
+    height: 20px;
+    width: 30px;
+    font-size: 10px;
+    font-weight: bolder;
+    background-color:#148A08 ;
+    color: white;
+    border: 2px solid white;
+    border-radius: 100px;
+    
+}
+
+
+
+.partTwo{
+    width:60vw;
+    height: 100vh;
+    background-color:black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  
+
+     
+
+}
+
+
+.genretiles{
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+
+
+.genretile{
+
+    margin: 5px;
+    height: 110px;
+    width: 110px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bolder;
+    padding: 10px;
+
+}
+
+.nextButton{
+    width: 150px;
+    height: 35px;
+    background-color:#148A08;
+    margin-top: 5px;
+    margin-left: 200px;
+    border: none;
+    border-radius: 20px;
+    font-family:'Roboto', sans-serif;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 15px
+}
+
+.nextButtondiv
+{display: flex;
+    justify-content: end;
+    margin-right: 30px;
+    margin-top: 30px;
+    width: 60vw;
+    height: 50px;
+  
+}
+
+

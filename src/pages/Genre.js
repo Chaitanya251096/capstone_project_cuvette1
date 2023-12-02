@@ -36,7 +36,7 @@ export default function Genre() {
   };
    
   const clickClick = () => {
-    let valid = true
+    
     if (selectedGenres.length < 3){
       setStatus('Please select atleast 3 Genre');
       

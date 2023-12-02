@@ -1,107 +1,110 @@
-import React, { useState, useEffect } from 'react';
-import Home from './Home';
-import Genre from './Genre';
-import { json } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import Home from "./Home";
+import Genre from "./Genre";
+// import {  json } from "react-router-dom";
+import styles3 from "./profile.module.css";
+import Weather from "./weather";
+import News from "./news";
+import {useNavigate} from 'react-router-dom'
+
 
 const Profile = () => {
-  const [nameValue, setNameValue] = useState('');
-  const [usernameValue, setUsernameValue] = useState('');
-  const [emailValue, setEmailValue] = useState('');
-  const [mobileValue, setMobileValue] = useState('');
-  const [genre1Value, setGenre1Value] = useState('');
-  const [genre2Value, setGenre2Value] = useState('');
-  const [genre3Value, setGenre3Value] = useState('');
-  const [genre4Value, setGenre4Value] = useState('');
-  const [genre5Value, setGenre5Value] = useState('');
-  const [genre6Value, setGenre6Value] = useState('');
-  const [genre7Value, setGenre7Value] = useState('');
-  const [genre8Value, setGenre8Value] = useState('');
-  const [genre9Value, setGenre9Value] = useState('');  
+  const [nameValue, setNameValue] = useState("");
+  const [usernameValue, setUsernameValue] = useState("");
+  const [emailValue, setEmailValue] = useState("");
+  const [mobileValue, setMobileValue] = useState("");
+  const [genre1Value, setGenre1Value] = useState("");
+ 
+  const navigate = useNavigate()
   
+
+  
+
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("name"));
     const data1 = JSON.parse(localStorage.getItem("username"));
     const data2 = JSON.parse(localStorage.getItem("Email"));
     const data3 = JSON.parse(localStorage.getItem("mobile"));
-    const data4 =localStorage.getItem("categoriesOfUsers");
-    const genre1 =JSON.parse(data4)
-    // const genre2 =JSON.parse(data4)
+    const data4 = localStorage.getItem(["categoriesOfUsers"]);
+    const genre1 = JSON.parse(data4);
+
+    const mygenreList = genre1.map((name) => <p className={styles3.genreItem}>{name}</p>)
     
-    
+
     if (data) {
       setNameValue(data);
     }
     if (data1) {
-        setUsernameValue(data1);
-      }
-      if (data2) {
-        setEmailValue(data2);
-      }
-      if (data3) {
-        setMobileValue(data3);
-      }
-      if (genre1[0]) {
-        setGenre1Value(genre1[0]);
+      setUsernameValue(data1);
+    }
+    if (data2) {
+      setEmailValue(data2);
+    }
+    if (data3) {
+      setMobileValue(data3);
+    }
+    if (mygenreList) {
+      setGenre1Value(mygenreList);
+    }
+     }, []);
 
-      }
-      if (genre1[1]) {
-        setGenre2Value(genre1[1]);
 
-      }
-      if (genre1[2]) {
-        setGenre3Value(genre1[2]);
+  const Click =()=>{
+   navigate('/Movies')
+  }
 
-      }
-      if (genre1[3]) {
-        setGenre4Value(genre1[3]);
-
-      }
-      if (genre1[4]) {
-        setGenre5Value(genre1[4]);
-
-      }
-      if (genre1[5]) {
-        setGenre6Value(genre1[5]);
-
-      }
-      if (genre1[6]) {
-        setGenre7Value(genre1[6]);
-
-      }
-      if (genre1[7]) {
-        setGenre8Value(genre1[7]);
-
-      }
-      if (genre1[8]) {
-        setGenre9Value(genre1[8]);
-
-      }
-      
-      
-  }, []);
 
   return (
-    <div>
-      <p>{nameValue}</p>
-      <p>{usernameValue}</p>
-      <p>{emailValue}</p>
-      <p>{mobileValue}</p>
-
-      <p>{genre1Value}</p>
-      <p>{genre2Value}</p>
-      <p>{genre3Value}</p>
+    
+    <div className={styles3.main}>
+      <div className={styles3.left}>
+        
+      <div className={styles3.upperleft}>
       
-      <p>{genre4Value}</p>
-      <p>{genre5Value}</p>
-      <p>{genre6Value}</p>
-      
-      <p>{genre7Value}</p>
-      <p>{genre8Value}</p>
-      <p>{genre9Value}</p>
+        <div className={styles3.profile}>
+       
+       
+          <div className={styles3.idcard}>
+            <div className={styles3.profilephoto}>
+               
+             
+             
+            </div>
+            <div className={styles3.regidetails}>
+              <p>{nameValue}</p>
+              <p>{usernameValue}</p>
+              <p>{emailValue}</p>
+              <p>{mobileValue}</p>
+            </div>
+          </div>
+          <span className={styles3.chiptitle}>Genre Selected : </span>
+          <div className={styles3.genre}>
+            {genre1Value} 
+          </div>
+        </div>
+        <div className={styles3.textareabox}>
+          <h1 className={styles3.textareahead}>My Notes</h1>
+          <textarea className={styles3.textarea}>
+            
+          </textarea>
+        
 
-    </div>
+        </div>
+      </div>
+
+      
+      </div>
+      <div className={styles3.weather}>
+        <Weather/>
+        <News/>
+      <div className={styles3.BrowseDiv}>
+        <button className={styles3.Browse} onClick={Click}>
+          Browse
+        </button>
+        </div>
+      </div>
+      </div>
   );
 };
 
 export default Profile;
-
